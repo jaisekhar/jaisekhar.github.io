@@ -9,7 +9,6 @@ function loadDoc() {
 var data = null;
 
 var xhr = new XMLHttpRequest();
-xhr.withCredentials = true;
 xhr.addEventListener("readystatechange", function () {
   if (this.readyState === 4) {
     document.getElementById("demo").innerHTML = this.responseText;
