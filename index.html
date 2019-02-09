@@ -11,12 +11,15 @@ var data = null;
 var xhr = new XMLHttpRequest();
 xhr.addEventListener("readystatechange", function () {
   if (this.readyState === 4) {
-    document.getElementById("demo").innerHTML = this.responseXML;
+    //document.getElementById("demo").innerHTML = this.response;
+	var w = window.open('about:blank', 'windowname');
+    w.document.write(this.response);
+	w.document.close();
   }});
 
 xhr.open("GET", "https://cors-anywhere.herokuapp.com/https://dashmaster23-2.coupadev.com/api/suppliers/1");
 xhr.setRequestHeader("X-COUPA-API-KEY", "0f36fb0f532a7ff9e4277fccfc6b858cb54e5690");
-xhr.setRequestHeader("Accept", "application/xml");
+xhr.setRequestHeader("Accept", "application/json");
 xhr.setRequestHeader("cache-control", "no-cache");
 xhr.setRequestHeader("Postman-Token", "53ec7a3b-0ade-4b20-a5c7-ca2005333257");
 
