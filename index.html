@@ -15,7 +15,7 @@ xhr.addEventListener("readystatechange", function () {
     document.getElementById("demo").innerHTML = this.responseText;
   }});
 
-xhr.open("GET", "https://dashmaster23-2.coupadev.com/api/suppliers/1");
+xhr.open("GET", "https://cors-anywhere.herokuapp.com/https://dashmaster23-2.coupadev.com/api/suppliers/1");
 xhr.setRequestHeader("X-COUPA-API-KEY", "0f36fb0f532a7ff9e4277fccfc6b858cb54e5690");
 xhr.setRequestHeader("Accept", "application/xml");
 xhr.setRequestHeader("cache-control", "no-cache");
