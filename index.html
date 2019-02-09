@@ -1,31 +1,28 @@
 <!DOCTYPE html>
 <html>
-<head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script>
-var settings = {
-  "async": true,
-  "crossDomain": true,
-  "url": "https://cors-anywhere.herokuapp.com/https://dashmaster23-2.coupadev.com/api/suppliers/1",
-  "method": "GET",
-  "headers": {
-    "X-COUPA-API-KEY": "0f36fb0f532a7ff9e4277fccfc6b858cb54e5690",
-    "Accept": "application/x",
-    "cache-control": "no-cache",
-    "Postman-Token": "bf88f9c1-4178-4758-a521-8dabaf625a16"
-  }
-}
-
-$.ajax(settings).done(function (response) {
-  console.log(response);
-});
-</script>
-</head>
 <body>
+<button type="button" onclick="loadDoc()">Request data</button>
+<p id="demo"></p>
+ 
+<script>
+function loadDoc() {
+var data = null;
 
-<div id="div1"><h2>Let jQuery AJAX Change This Text</h2></div>
+var xhr = new XMLHttpRequest();
+xhr.addEventListener("readystatechange", function () {
+  if (this.readyState === 4) {
+    document.getElementById("demo").innerHTML = this.responseText;
+  }});
 
-<button>Get External Content</button>
+xhr.open("GET", "https://cors-anywhere.herokuapp.com/https://dashmaster23-2.coupadev.com/api/suppliers/1");
+xhr.setRequestHeader("X-COUPA-API-KEY", "0f36fb0f532a7ff9e4277fccfc6b858cb54e5690");
+xhr.setRequestHeader("Accept", "application/xml");
+xhr.setRequestHeader("cache-control", "no-cache");
+xhr.setRequestHeader("Postman-Token", "53ec7a3b-0ade-4b20-a5c7-ca2005333257");
+
+xhr.send(data);
+}
+</script>
 
 </body>
 </html>
