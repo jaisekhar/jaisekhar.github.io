@@ -11,7 +11,7 @@ var data = null;
 var xhr = new XMLHttpRequest();
 xhr.addEventListener("readystatechange", function () {
   if (this.readyState === 4) {
-    document.getElementById("demo").innerHTML = this.responseText;
+    document.getElementById("demo").innerHTML = this.response;
   }});
 
 xhr.open("GET", "https://cors-anywhere.herokuapp.com/https://dashmaster23-2.coupadev.com/api/suppliers/1");
