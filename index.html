@@ -17,11 +17,7 @@ xhr.addEventListener("readystatechange", function () {
   if (this.readyState === 4) {
     //document.getElementById("demo").innerHTML = document.getElementById("url").value;
 	var w = window.open('about:blank', 'windowname');
-    //w.document.write(this.response);
-	w.document.write(JSON.stringify(this.response, null, 6)
-     .replace(/\n( *)/g, function (match, p1) {
-         return '<br>' + '&nbsp;'.repeat(p1.length);
-     }));
+    w.document.write(this.response);
 	w.document.close();
   }});
 var proxy="https://cors-anywhere.herokuapp.com/"+url
